@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Sorteador de Times</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sorteador de Times</h1>
+
+    <div class="inputs-row">
+      <select id="mode-select">
+        <option value="names">Por nomes</option>
+        <option value="numbers">Por números</option>
+      </select>
+
+      <input type="number" id="team-size" placeholder="Jogadores por time" min="1" />
+    </div>
+
+    <div id="names-inputs">
+      <textarea id="names" placeholder="Digite um nome por linha..." rows="10"></textarea>
+    </div>
+
+    <div id="numbers-inputs" style="display: none;">
+      <input type="number" id="total-numbers" placeholder="Total de jogadores" min="1" />
+    </div>
+
+    <button id="draw-teams">Sortear Times</button>
+
+    <div id="teams"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sorteador de Times | Desenvolvido por Lukac's Bdc</p>
+    <p>
+      <a href="https://github.com/LukacsBdc" target="_blank">GitHub</a> |
+      <a href="mailto:lukacsbdc@outlook.com">Contato</a>
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
