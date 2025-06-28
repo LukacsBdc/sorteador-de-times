@@ -112,6 +112,7 @@ footer {
   margin-top: 40px;
   font-size: 14px;
   opacity: 0.8;
+  
 }
 
 footer a {
@@ -121,6 +122,11 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.logo {
+  width: 30px;
+  height: 25px;
 }
 
 @media (max-width: 768px) {
