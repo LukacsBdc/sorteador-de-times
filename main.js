@@ -1,3 +1,4 @@
+
 const modeSelect = document.getElementById("mode-select");
 const namesInputSection = document.getElementById("names-inputs");
 const numbersInputSection = document.getElementById("numbers-inputs");
@@ -90,3 +91,4 @@ function displayTeams(teams) {
     teamsContainer.appendChild(teamDiv);
   });
 }
+

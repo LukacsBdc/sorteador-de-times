@@ -6,44 +6,36 @@
 }
 
 body {
-  background: url('https://yt3.googleusercontent.com/PT3toglXvtGUWqdixgErunwaCvRT_DA01QDPCTJmUGH7fRH4EYiExx0qmEbmGxZJSqY8K7Iw=s900-c-k-c0x00ffffff-no-rj') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 20px;
-  color: white;
-  flex-direction: column;
-
+  background-color: #111;
+  background-image: url('https://yt3.googleusercontent.com/PT3toglXvtGUWqdixgErunwaCvRT_DA01QDPCTJmUGH7fRH4EYiExx0qmEbmGxZJSqY8K7Iw=s900-c-k-c0x00ffffff-no-rj');
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: 34% auto;
 }
+
 
 .container {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 15px;
-  width: 100%;
+  padding: 50px;
+  border-radius: 70px;
+  width: 40%;
   max-width: 600px;
-  flex: 1;
+  min-height: 400px;
+  margin: auto;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .inputs-row {
   display: flex;
-  flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
-}
-
-@media (min-width: 480px) {
-  .inputs-row {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 select,
@@ -85,6 +77,8 @@ button:hover {
   background-color: #00e676;
 }
 
+
+
 #teams {
   margin-top: 20px;
   display: flex;
@@ -94,16 +88,11 @@ button:hover {
 }
 
 .team {
-  background-color: #212121;
+  background-color: #fff;
   padding: 15px;
   border-radius: 8px;
-  flex: 1 1 100%;
-}
-
-@media (min-width: 600px) {
-  .team {
-    flex: 1 1 45%;
-  }
+  flex: 1 1 200px;
+  min-width: 150px;
 }
 
 .team h3 {
@@ -117,11 +106,11 @@ button:hover {
 }
 
 footer {
+  background-color: #212121;
   text-align: center;
   color: #ccc;
-  font-size: 14px;
   margin-top: 40px;
-  padding: 10px 0;
+  font-size: 14px;
   opacity: 0.8;
 }
 
@@ -132,4 +121,21 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 30px;
+    border-radius: 30px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
 }
