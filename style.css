@@ -127,9 +127,10 @@ footer a:hover {
 .logo {
   width: 30px;
   height: 25px;
+  opacity: 25,9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .container {
     width: 90%;
     padding: 30px;
