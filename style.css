@@ -107,8 +107,10 @@ button:hover {
   font-family: "Bitcount Grid Double", sans-serif;
   color: white;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 30px;
+  /* Reduzido de 100px para 30px */
   margin: 0;
+  animation: aparecer 0.8s ease-in-out;
 }
 
 .timer {
@@ -131,18 +133,20 @@ button:hover {
 }
 
 .b-timer {
-  background-color: #ffffff22;
+  background-color: #ffffff88;
+  /* Antes: #ffffff22 — agora menos transparente */
   border: none;
   color: white;
   padding: 12px 24px;
   font-size: 1.2rem;
-  border-radius: 8px;
+  border-radius: 150px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .b-timer:hover {
-  background-color: #ffffff55;
+  background-color: #ffffffaa;
+  /* Um pouco mais claro no hover */
 }
 
 footer {
@@ -166,7 +170,19 @@ footer a:hover {
 .logo {
   width: 30px;
   height: 25px;
-  opacity: 0.25; /* Corrigido de "25, 9" */
+  opacity: 0.25;
+  /* Corrigido de "25, 9" */
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsivo */
