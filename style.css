@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -11,8 +10,8 @@ body {
   background-repeat: repeat;
   background-position: top center;
   background-size: 34% auto;
+  font-family: 'Roboto', sans-serif;
 }
-
 
 .container {
   background-color: rgba(0, 0, 0, 0.7);
@@ -21,7 +20,7 @@ body {
   width: 40%;
   max-width: 600px;
   min-height: 400px;
-  margin: 60px auto 20px auto; /* <-- AQUI: margem superior aumentada */
+  margin: 60px auto 20px auto;
 }
 
 h1 {
@@ -77,8 +76,6 @@ button:hover {
   background-color: #00e676;
 }
 
-
-
 #teams {
   margin-top: 20px;
   display: flex;
@@ -105,6 +102,49 @@ button:hover {
   padding-left: 0;
 }
 
+/* CRONÔMETRO */
+.cronometer {
+  font-family: "Bitcount Grid Double", sans-serif;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+  margin: 0;
+}
+
+.timer {
+  font-size: 5rem;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px #00000066;
+}
+
+/* Layout dos botões do cronômetro */
+.cron-buttons-top {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.cron-buttons-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.b-timer {
+  background-color: #ffffff22;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.b-timer:hover {
+  background-color: #ffffff55;
+}
+
 footer {
   background-color: #212121;
   text-align: center;
@@ -112,7 +152,6 @@ footer {
   margin-top: 40px;
   font-size: 14px;
   opacity: 0.8;
-  
 }
 
 footer a {
@@ -127,9 +166,10 @@ footer a:hover {
 .logo {
   width: 30px;
   height: 25px;
-  opacity: 25,9;
+  opacity: 0.25; /* Corrigido de "25, 9" */
 }
 
+/* Responsivo */
 @media (max-width: 400px) {
   .container {
     width: 90%;
@@ -144,5 +184,14 @@ footer a:hover {
   button {
     font-size: 16px;
     padding: 12px;
+  }
+
+  .timer {
+    font-size: 3rem;
+  }
+
+  .b-timer {
+    padding: 10px 16px;
+    font-size: 1rem;
   }
 }

@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <title>Sorteador de Times</title>
 
@@ -41,6 +43,20 @@
 
     <button id="draw-teams">Sortear Times</button>
 
+    <div class="cronometer">
+      <h1 class="timer">00:00:00</h1>
+    </div>
+
+    <div class="cron-buttons-top">
+      <button class="b-timer" onclick="start()">Start</button>
+      <button class="b-timer" onclick="stop()">Stop</button>
+    </div>
+
+    <div class="cron-buttons-bottom">
+      <button class="b-timer" onclick="reset()">Reset</button>
+    </div>
+
+
     <div id="teams"></div>
   </div>
 
@@ -61,7 +77,49 @@
 
   <script src="main.js"></script>
 
+  <script>
+    let number = 0;
+    let timer = document.querySelector('.timer');
+    let cron = null; // <- precisa estar fora da função
+
+    function start() {
+      if (cron !== null) return; // Evita múltiplos intervalos
+
+      cron = setInterval(() => {
+        number++;
+        let hours = Math.floor(number / 3600);
+        let minutes = Math.floor((number % 3600) / 60);
+        let seconds = number % 60;
+
+        let formattedTime =
+          String(hours).padStart(2, '0') + ':' +
+          String(minutes).padStart(2, '0') + ':' +
+          String(seconds).padStart(2, '0');
+
+        timer.innerHTML = formattedTime;
+      }, 1000);
+    }
+
+    function stop() {
+      clearInterval(cron);
+      cron = null; // <- permite iniciar novamente depois
+    }
+
+    function reset() {
+      clearInterval(cron);
+      cron = null;       // <- importante
+      number = 0;
+      timer.innerHTML = "00:00:00";
+    }
+  </script>
+
+
+
+  </script>
+
 
 </body>
+
+
 
 </html>
