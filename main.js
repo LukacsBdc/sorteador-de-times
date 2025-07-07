@@ -17,7 +17,11 @@ let cron = null;
 function start() {
   reset();
 
-  const selectedMinutes = parseInt(document.getElementById("minutesSelect").value);
+  const selectedMinutes = parseInt(document.getElementById("minutesInput").value);
+  if (isNaN(selectedMinutes) || selectedMinutes <= 0) {
+    alert("Digite um valor válido de minutos.");
+    return;
+  }
   if (!selectedMinutes) {
     alert("Selecione um tempo de alarme nos minutos!");
     return;

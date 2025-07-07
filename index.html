@@ -47,21 +47,10 @@
       <h2 class="timer">00:00:00</h2>
     </div>
 
-    <select id="minutesSelect"
-      style="width: 100%; padding: 10px; border-radius: 8px; font-size: 16px; margin-top: 5px;">
-      <option value="">Minutos</option>
-      <option value="1">1</option>
-      <option value="5">5</option>
-      <option value="7">7</option>
-      <option value="10">10</option>
-      <option value="15">15</option>
-      <option value="20">20</option>
-      <option value="25">25</option>
-      <option value="30">30</option>
-      <option value="35">35</option>
-      <option value="40">40</option>
-      <option value="45">45</option>
-    </select>
+   <input type="number" id="minutesInput"
+       placeholder="Digite os minutos"
+       min="1" max="999"
+       style="width: 100%; padding: 10px; border-radius: 8px; font-size: 16px; margin-top: 5px;">
 
     <div class="cron-buttons-top">
       <button class="b-timer" onclick="start()">Iniciar</button>
