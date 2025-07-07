@@ -1,4 +1,4 @@
-
+// Seletores e elementos principais
 const modeSelect = document.getElementById("mode-select");
 const namesInputSection = document.getElementById("names-inputs");
 const numbersInputSection = document.getElementById("numbers-inputs");
@@ -8,6 +8,66 @@ const teamSizeInput = document.getElementById("team-size");
 const drawButton = document.getElementById("draw-teams");
 const teamsContainer = document.getElementById("teams");
 
+// Cronômetro e alarme
+let alarmTimeout = null;
+let number = 0;
+let timer = document.querySelector('.timer');
+let cron = null;
+
+function start() {
+  reset();
+
+  const selectedMinutes = parseInt(document.getElementById("minutesSelect").value);
+  if (!selectedMinutes) {
+    alert("Selecione um tempo de alarme nos minutos!");
+    return;
+  }
+
+  if (cron !== null) return;
+
+  cron = setInterval(() => {
+    number++;
+    let hours = Math.floor(number / 3600);
+    let minutes = Math.floor((number % 3600) / 60);
+    let seconds = number % 60;
+
+    let formattedTime =
+      String(hours).padStart(2, '0') + ':' +
+      String(minutes).padStart(2, '0') + ':' +
+      String(seconds).padStart(2, '0');
+
+    timer.innerHTML = formattedTime;
+  }, 1000);
+
+  alarmTimeout = setTimeout(() => {
+    const audio = document.getElementById("alarmSound");
+    audio.play();
+
+    document.body.classList.add("alarm-flash");
+    alert("⏰ Tempo atingido!");
+
+    setTimeout(() => {
+      document.body.classList.remove("alarm-flash");
+    }, 5000);
+  }, selectedMinutes * 60 * 1000);
+}
+
+function stop() {
+  clearInterval(cron);
+  clearTimeout(alarmTimeout);
+  cron = null;
+}
+
+function reset() {
+  clearInterval(cron);
+  clearTimeout(alarmTimeout);
+  cron = null;
+  number = 0;
+  timer.innerHTML = "00:00:00";
+  document.body.classList.remove("alarm-flash");
+}
+
+// Alternância de modo
 modeSelect.addEventListener("change", () => {
   const mode = modeSelect.value;
   if (mode === "names") {
@@ -19,6 +79,7 @@ modeSelect.addEventListener("change", () => {
   }
 });
 
+// Sorteio de times
 drawButton.addEventListener("click", () => {
   const mode = modeSelect.value;
   const teamSize = parseInt(teamSizeInput.value);
@@ -91,4 +152,3 @@ function displayTeams(teams) {
     teamsContainer.appendChild(teamDiv);
   });
 }
-

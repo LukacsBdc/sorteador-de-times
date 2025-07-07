@@ -44,21 +44,39 @@
     <button id="draw-teams">Sortear Times</button>
 
     <div class="cronometer">
-      <h1 class="timer">00:00:00</h1>
+      <h2 class="timer">00:00:00</h2>
     </div>
 
+    <select id="minutesSelect"
+      style="width: 100%; padding: 10px; border-radius: 8px; font-size: 16px; margin-top: 5px;">
+      <option value="">Minutos</option>
+      <option value="1">1</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="25">25</option>
+      <option value="30">30</option>
+      <option value="35">35</option>
+      <option value="40">40</option>
+      <option value="45">45</option>
+    </select>
+
     <div class="cron-buttons-top">
-      <button class="b-timer" onclick="start()">Inicar</button>
+      <button class="b-timer" onclick="start()">Iniciar</button>
       <button class="b-timer" onclick="stop()">Parar</button>
     </div>
 
     <div class="cron-buttons-bottom">
-      <button class="b-timer" onclick="reset()">Reniciar</button>
+      <button class="b-timer" onclick="reset()">Reiniciar</button>
     </div>
 
 
     <div id="teams"></div>
+
+    <audio id="alarmSound" src="./assets/alarm_clock.ogg" preload="auto"></audio>
   </div>
+
 
   <footer>
     <p>&copy; 2025 Sorteador de Times | Desenvolvido por Lukac's Bdc</p>
@@ -114,12 +132,6 @@
   </script>
 
 
-
-  </script>
-
-
 </body>
-
-
 
 </html>
